@@ -1,0 +1,18 @@
+create a folder
+
+in folder, open terminal and run -- npm init -y
+now package.json is created
+
+run -- npm i express
+now express is installed
+
+create a basic server by creating a file "index.js" and writing some code
+
+run -- node index
+server starts
+
+add routes using app.get()
+
+install nodemon in dev env only -- npm i -D nodemon
+open package.json and modify scripts
+run -- npm run dev
