@@ -49,7 +49,7 @@ app.listen(PORT, () => console.log(`Server on port ${PORT}.`));
 
 // usually express will not be used to do these things but to create some REST api
 // so now a very basic, non DB connected REST api will be made
-
+/*
 const express = require('express');
 const path = require('path');   // this package makes file path writing easier
 const app = express();
@@ -79,6 +79,24 @@ const members = [
         status: 'active'
     }
 ];
+app.get('/api/members', (req, res) => {
+    res.json(members);
+});
+app.use(express.static(path.join(__dirname, 'public')));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server on port ${PORT}.`));
+*/
+
+// cleaning up - putting members in different file
+// creating a very basic custom middleware logger to log URL hit and time
+
+const express = require('express');
+const path = require('path');   // this package makes file path writing easier
+const app = express();
+const members = require('./Members');
+const logger = require('./middeware/logger');
+// init middleware
+app.use(logger);
 app.get('/api/members', (req, res) => {
     res.json(members);
 });
