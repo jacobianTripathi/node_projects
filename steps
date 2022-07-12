@@ -16,3 +16,9 @@ add routes using app.get()
 install nodemon in dev env only -- npm i -D nodemon
 open package.json and modify scripts
 run -- npm run dev
+
+you can also send file instead..see index.js for steps in 3rd commented code
+
+you can then use express.static(path) and app.use() to auto set all static things instead of manually
+adding stuff in routes (see next commit or next lines of commented code)
+// these things in node can be done with many many many lines of code..that's why express
